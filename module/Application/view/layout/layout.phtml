@@ -1,55 +1,120 @@
 <?= $this->doctype() ?>
-
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
-
         <?= $this->headMeta()
-            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
-            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->setCharset('utf-8')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                ->appendName('viewport', 'width=device-width, initial-scale=1')
+                ->appendName('description', '')
+                ->appendName('keywords', 'ателье, пошив платьев, пошив на заказ')
+                ->appendName('twitter:title', '')
+                ->appendName('twitter:image', '')
+                ->appendName('twitter:url', '')
+                ->appendName('twitter:card', '')
+                ->appendProperty('og:title','')
+                ->appendProperty('og:image','')
+                ->appendProperty('og:url','')
+                ->appendProperty('og:site_name','')
+                ->appendProperty('og:description','');
         ?>
-
+        <?=
+            $this->headTitle('VERA &mdash; Ателье')->setSeparator(' - ')->setAutoEscape(false);
+        ?>
         <!-- Le styles -->
-        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => '', 'href' => $this->basePath() . '/images/favicon.ico'])
+            ->prependStylesheet('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,300,700')
             ->prependStylesheet($this->basePath('css/style.css'))
-            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
-            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.css'))
+            ->prependStylesheet($this->basePath('css/icomoon.css'))
+            ->prependStylesheet($this->basePath('css/flexslider.css'))
+            ->prependStylesheet($this->basePath('css/animate.css'));
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+            ->appendFile($this->basePath('js/modernizr-2.6.2.min.js'));
         ?>
-    </head>
-    <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="<?= $this->url('home') ?>">
-                        <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28" alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;Skeleton Application
-                    </a>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <?= $this->headScript()->appendFile($this->basePath('js/respond.min.js'));?>
+        <![endif]-->
+        </head>
+
+        <body>
+        <div id="fh5co-header">
+                <div class="container">
+                    <!-- Mobile Toggle Menu Button -->
+                <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+                <div id="fh5co-logo">
+                    <a href="#">VERA IBRAEVA<span>.</span></a>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?= $this->url('home') ?>">Home</a></li>
+                <nav id="fh5co-main-nav">
+                    <ul>
+                        <li><a href="#" data-nav-section="home">Главная</a></li>
+                        <li><a href="#" data-nav-section="contact">Контакты</a></li>
                     </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div id="fh5co-main">
+            <?php echo $this->layout()->content;?>
+        </div>
+
+        <div id="fh5co-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 animate-box">
+                        <div class="fh5co-footer-widget">
+                            <p>Created by Ereshov Jahangir</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 animate-box">
+                        <div class="fh5co-footer-widget">
+                            <ul class="fh5co-social pull-right">
+                                <li>
+                                    <a href="#"><i class="icon-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-vine"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-behance"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-google"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-vimeo"></i></a>
+                                </li>
+                            </ul>
+                            <div class="fh5co-footer-widget">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <div class="container">
-            <?= $this->content ?>
-            <hr>
-            <footer>
-                <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
-            </footer>
         </div>
-        <?= $this->inlineScript() ?>
+        <?=
+                 $this->inlineScript()
+                        ->prependFile($this->basePath('js/main.js'))
+                        ->prependFile($this->basePath('js/bootstrap.min.js'))
+                        ->prependFile($this->basePath('js/jquery.waypoints.min.js'))
+                        ->prependFile($this->basePath('js/jquery.stellar.min.js'))
+                        ->prependFile($this->basePath('js/jquery.flexslider-min.js'))
+                        ->prependFile($this->basePath('js/jquery.easing.1.3.js'))
+                        ->prependFile($this->basePath('js/jquery.min.js'));
+        ?>
     </body>
 </html>

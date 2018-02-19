@@ -14,6 +14,25 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        return new ViewModel();
+        $mainView = new ViewModel();
+
+        $homeView = new ViewModel();
+        $homeView->setTemplate('application/index/home');
+
+        $contactsView = new ViewModel();
+        $contactsView->setTemplate('application/index/contacts');
+//
+//        $secondarySidebarView = new ViewModel();
+//        $secondarySidebarView->setTemplate('content/secondary-sidebar');
+//
+//        $sidebarBlockView = new ViewModel();
+//        $sidebarBlockView->setTemplate('content/block');
+//
+//        $secondarySidebarView->addChild($sidebarBlockView, 'block');
+
+        $mainView->addChild($homeView, 'home')
+                    ->addChild($contactsView, 'contacts');
+//                    ->addChild($secondarySidebarView, 'sidebar_secondary');
+        return $mainView;
     }
 }
