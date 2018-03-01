@@ -193,6 +193,10 @@ p {
     box-shadow: none;
 }
 
+.icon-active{
+    color: #f67d38;
+}
+
 .form-control {
     box-shadow: none;
     background: transparent;

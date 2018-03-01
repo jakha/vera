@@ -24,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.contact-icon-size{
+    font-size: 1.2em;
+}
 .icon-add-to-list:before {
     content: "\e900";
 }
