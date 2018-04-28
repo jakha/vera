@@ -18,10 +18,13 @@ class IndexController extends AbstractActionController
 
         $homeView = new ViewModel();
         $homeView->setTemplate('application/index/home');
+        $portfolioView = new ViewModel();
+        $portfolioView->setTemplate('application/index/portfolio');
         $contactsView = new ViewModel();
         $contactsView->setTemplate('application/index/contacts');
 
         $mainView->addChild($homeView, 'home')
+                    ->addChild($portfolioView, 'portfolio')
                     ->addChild($contactsView, 'contacts');
 
         return $mainView;
