@@ -22,9 +22,12 @@ class IndexController extends AbstractActionController
         $portfolioView->setTemplate('application/index/portfolio');
         $contactsView = new ViewModel();
         $contactsView->setTemplate('application/index/contacts');
+        $aboutView = new ViewModel();
+        $aboutView->setTemplate('application/index/about');
 
         $mainView->addChild($homeView, 'home')
                     ->addChild($portfolioView, 'portfolio')
+                    ->addChild($aboutView, 'about')
                     ->addChild($contactsView, 'contacts');
 
         return $mainView;

@@ -1,7 +1,36 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jahangir
- * Date: 19.02.18
- * Time: 1:52
- */
+        $imgGalleryPath = '/images/gallery/';
+        $galleryDir    = PUBLIC_PATH . $imgGalleryPath;
+        $galleryFilesName = scandir($galleryDir);
+        unset($galleryFilesName[0],$galleryFilesName[1]);
+?>
+<div id="fh5co-portfolio" data-section="portfolio">
+    <div class="container">
+        <div class="row r-pb">
+            <div class="col-md-8 col-md-offset-2 text-center section-heading">
+                <h2 class="fh5co-section-title animate-box">Галлерея</h2>
+                <p class="fh5co-lead animate-box">
+                        Один из самых волнительных моментов - финальная примерка,
+                    нам важно, как вы выглядите, так мы становимся частью счастливых событий в вашей жизни.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <?php foreach($galleryFilesName as $image):?>
+                <div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+                    <div class="img-grid">
+                        <img src= "<?= $imgGalleryPath . $image;?>"
+                             alt=""
+                             class="img-responsive">
+                        <a href="" class="transition">
+                            <div>
+                                <span class="fh5co-meta"></span>
+                                <h2 class="fh5co-title"></h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            <?php endforeach;?>
+        </div>
+    </div>
+</div>

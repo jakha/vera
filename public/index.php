@@ -3,6 +3,13 @@
 use Zend\Mvc\Application;
 use Zend\Stdlib\ArrayUtils;
 
+// Define path to application directory
+defined('ROOT_PATH')
+|| define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
+defined('APPLICATION_PATH')
+|| define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
+defined('PUBLIC_PATH')
+|| define('PUBLIC_PATH', ROOT_PATH . '/public');
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

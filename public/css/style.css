@@ -508,10 +508,13 @@ p {
 }
 
 #fh5co-about {
-    background: #444853;
+    /*background: #fff;*/
+    background: rgba(255, 255, 255, 0.4);
+    /*background: #444853;*/
 }
 #fh5co-about h2 {
-    color: #fff;
+    /*color: #fff;*/
+    color: #41454f;
 }
 #fh5co-about .fh5co-text {
     padding-left: 4em;
@@ -522,7 +525,8 @@ p {
     }
 }
 #fh5co-about .fh5co-text .fh5co-meta {
-    color: rgba(255, 255, 255, 0.2);
+    /*color: rgba(255, 255, 255, 0.2);*/
+    color: #41454f;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 12px;
@@ -560,6 +564,18 @@ p {
     font-size: 50px;
     color: #f9ad81;
 }
+
+#fh5co-about .imageMaster{
+    border-color: #dddddd;
+}
+
+#fh5co-about .imageMaster:first-child img {
+    border-top-right-radius: 10em;
+    border-top-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+    border-bottom-left-radius: 10em;
+}
+
 @media screen and (max-width: 992px) {
     #fh5co-about .fh5co-text.with-plus:after {
         display: none;
@@ -791,7 +807,7 @@ p {
     color: #41454f;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
-    opacity: .4;
+    /*opacity: .4;*/
     margin-bottom: 20px;
 }
 
